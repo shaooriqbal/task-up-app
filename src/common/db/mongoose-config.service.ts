@@ -1,0 +1,24 @@
+import { Injectable } from '@nestjs/common';
+import {
+  MongooseModuleOptions,
+  MongooseOptionsFactory,
+} from '@nestjs/mongoose';
+
+@Injectable()
+export class MongooseConfigService implements MongooseOptionsFactory {
+  private username: string = '';
+  private password: string = '';
+
+  constructor() {}
+
+  createMongooseOptions():
+    | Promise<MongooseModuleOptions>
+    | MongooseModuleOptions {
+    return {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      uri: 'mongodb://10.20.20.83:27017/posto--db',
+      // uri: 'mongodb+srv://admin:admin@myfirstapp.cchqw.mongodb.net/posto?retryWrites=true&w=majority',
+    };
+  }
+}
