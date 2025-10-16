@@ -17,7 +17,7 @@ export class MongooseConfigService implements MongooseOptionsFactory {
     return {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      uri: 'mongodb://10.20.20.83:27017/posto--db',
+      uri: 'mongodb://localhost:27017/posto--db',
       // uri: 'mongodb+srv://admin:admin@myfirstapp.cchqw.mongodb.net/posto?retryWrites=true&w=majority',
     };
   }

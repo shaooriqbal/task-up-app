@@ -10,8 +10,10 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+
+    const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.use(requestIp.mw());
+
   const config = new DocumentBuilder()
     .setTitle('POSTO')
     .setDescription('Posto Property App')
@@ -20,9 +22,11 @@ async function bootstrap() {
     .setVersion('V1')
     .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT' })
     .build();
+
   const options: SwaggerDocumentOptions = {
     operationIdFactory: (controllerKey: string, methodKey: string) => methodKey,
   };
+
   const document = SwaggerModule.createDocument(app, config, options);
   SwaggerModule.setup('swagger', app, document);
 

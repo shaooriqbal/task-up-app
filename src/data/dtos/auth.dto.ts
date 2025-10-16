@@ -6,7 +6,7 @@ import {
   IsOptional,
   IsEmail,
 } from 'class-validator';
-export class AccessTokenResponse {
+export class AccessTokenResponse  {
   @ApiProperty()
   @IsString()
   access_token: string;

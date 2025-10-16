@@ -1,10 +1,6 @@
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 
-/**
- *
- * @author arish <arishsultan104@gmail.com>
- */
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor() {
     super({
