@@ -14,9 +14,10 @@ async function bootstrap() {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.use(requestIp.mw());
 
+  //swagger setup
   const config = new DocumentBuilder()
-    .setTitle('POSTO')
-    .setDescription('Posto Property App')
+    .setTitle('Task Up')
+    .setDescription('Task Up App')
     .setVersion('1.0')
     .addTag('Swagger UI')
     .setVersion('V1')
@@ -30,12 +31,14 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config, options);
   SwaggerModule.setup('swagger', app, document);
 
+  //validation pipe setup
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
       transform: true,
     }),
   );
+
   await app.listen(3000);
 }
 bootstrap();
