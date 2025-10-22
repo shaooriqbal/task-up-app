@@ -10,9 +10,9 @@ export class PersonService {
   ) {
   }
 
-  fetch(id?: string) {
-    if (id) return this.model.findById(id).exec();
-    return this.model.find().exec();
+  async fetch(id?: string) {
+    if (id) return await this.model.findById(id).exec();
+    return await this.model.find().exec();
   }
 
   async create(data: any) {
@@ -25,12 +25,12 @@ export class PersonService {
     return (await this.model.create(data)) as PersonDocument;
   }
 
-  update(id: string, data: any) {
-    return this.model.findByIdAndUpdate(id, data).exec();
+  async update(id: string, data: any) {
+    return await this.model.findByIdAndUpdate(id, data).exec();
   }
 
-  delete(id: string) {
-    return this.model.findByIdAndDelete(id).exec();
+  async delete(id: string) {
+    return  await this.model.findByIdAndDelete(id).exec();
   }
 
   async fetchByUsername(username: string): Promise<Person> {

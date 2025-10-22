@@ -9,7 +9,7 @@ import {
 export class AccessTokenResponse  {
   @ApiProperty()
   @IsString()
-  access_token: string;
+  accessToken: string;
 }
 
 export class SignInRequest {
@@ -18,7 +18,7 @@ export class SignInRequest {
   @MinLength(4)
   @MaxLength(20)
   @IsEmail()
-  username: string;
+  userName: string;
 
   @ApiProperty()
   @IsString()
@@ -33,7 +33,7 @@ export class SignUpRequest {
   @MinLength(4)
   @MaxLength(20)
   @IsEmail()
-  username: string;
+  userName: string;
 
   @ApiProperty()
   @IsString()
@@ -46,14 +46,14 @@ export class SignUpRequest {
   @MinLength(4)
   @MaxLength(15)
   @IsOptional()
-  first_name: string;
+  firstName: string;
 
   @ApiProperty()
   @IsString()
   @MinLength(4)
   @MaxLength(15)
   @IsOptional()
-  last_name: string;
+  lastName: string;
 
   @ApiProperty()
   @IsString()
