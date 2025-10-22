@@ -5,7 +5,7 @@ import { Prop, Schema } from '@nestjs/mongoose';
 export class User {
   @ApiProperty()
   @Prop({ unique: true })
-  username: string;
+  userName: string;
 
   @ApiProperty({ format: 'password' })
   @Prop({ select: false })

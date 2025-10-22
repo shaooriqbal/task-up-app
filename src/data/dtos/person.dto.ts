@@ -7,14 +7,14 @@ export class PersonUpdateRequest {
   @MinLength(4)
   @MaxLength(15)
   @IsOptional()
-  first_name: string;
+  firstName: string;
 
   @ApiProperty({ required: true })
   @IsString()
   @MinLength(4)
   @MaxLength(15)
   @IsOptional()
-  last_name: string;
+  lastName: string;
 
   @ApiProperty()
   @IsString()
@@ -33,13 +33,13 @@ export class PersonResponse {
   _id: string;
 
   @ApiProperty()
-  username: string;
+  userName: string;
 
   @ApiProperty()
-  first_name: string;
+  firstName: string;
 
   @ApiProperty()
-  last_name: string;
+  lastName: string;
 
   @ApiProperty()
   phone: string;
